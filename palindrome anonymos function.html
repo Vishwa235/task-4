@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <script>
+            function isPalindrome(N)
+    {
+        let str = "" + N;
+        let len = str.length;
+        for (let i = 0; i < parseInt(len / 2, 10); i++)
+        {
+            if (str[i] != str[len - 1 - i ])
+                return false;
+        }
+        return true;
+    }
+          palin =function (arr, n)
+                 {
+        for (var i = 0; i < n; i++)
+        {
+            var ans = isPalindrome(arr[i]);
+            if (ans == false)
+                return false;
+        }
+        return true;
+    }
+    console.log(palin("madam",5));
+    
+        </script>
+    </body>
+</html>

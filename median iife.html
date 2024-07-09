@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <script>
+            (function (arr1, arr2){
+    arr3=arr1.concat(arr2)
+  len=arr3.length
+  n=len/2
+  if(len%2!=0)
+  {
+      n1=(len+1)/2
+      return(arr3[n1-1])
+  }
+  else{
+    m=arr3[n-1]
+      m2=arr3[n]
+      m3=(m+m2)/2
+    return(m3)
+  }
+  })
+  ([1,2,3,4,5],[6,7,8,9,10])
+        </script>
+    </body>
+</html>
