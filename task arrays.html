@@ -1,0 +1,263 @@
+//Vishwa-task 4
+<html>
+    <body>
+        <script>
+             //Odd number
+             //Anonymons function
+              arr=[1,2,3,4,5]
+              odd=function(arr)
+              {
+                  for(i=0;i<arr.length;i++)
+                     if(arr[i]%2!=0)
+                       console.log(arr[i])
+              }
+              odd(arr);
+              //IIFE function
+              (function(arr){
+                for(i=0;i<arr.length;i++)
+                     if(arr[i]%2!=0)
+                       console.log(arr[i])
+              }
+              )(arr);
+              //Arrow function
+              var a=(arr)=>{
+                for(i=0;i<arr.length;i++)
+                     if(arr[i]%2!=0)
+                       console.log(arr[i])
+              }
+              a(arr);
+              //Sum of the array
+              //Anonymons function
+              arr=[1,2,3,4,5]
+              sum=function(arr){
+                a=0;
+                for(i=0;i<arr.length;i++)
+                     a+=arr[i];
+                return a    
+              }
+              console.log(sum(arr));
+              //IIFE function
+              (function(a){
+                 s=0
+                 for(i=0;i<a.length;i++){
+                  s+=a[i];
+                 }
+                console.log(s)
+              })(arr);
+              //Arrow function
+              var a=(a)=>{
+                s=0
+                for(i=0;i<a.length;i++)
+                     s+=a[i]
+                console.log(s)
+              }
+              a(arr);
+             //Prime number
+             //Anonymous Function:
+              arr=[2,3,4,5,6,7,8,9,10]
+                var prime=function(numArray){
+                      numArray = numArray.filter((number) => {
+                        for (var i = 2; i <= Math.sqrt(number); i++) {
+                          if (number % i === 0) return false;
+                        }
+                        return true;
+                      });
+                      console.log(numArray);
+                  }
+                prime(arr);
+             //IIFE 
+                   (  
+                   function(numArray){
+                      numArray = numArray.filter((number) => {
+                        for (var i = 2; i <= Math.sqrt(number); i++) {
+                          if (number % i === 0) return false;
+                        }
+                        return true;
+                      });
+                      console.log(numArray);
+                  })([1,2,3,4])
+                  //Arrow Function 
+                   primeNumber = (numArray) => {
+                      numArray = numArray.filter((number) => {
+                        for (var i = 2; i <= Math.sqrt(number); i++) {
+                          if (number % i === 0) return false;
+                        }
+                        return true;
+                      });
+                      console.log(numArray);
+                    }
+                    primeNumber(arr);
+                  //Convert all the strings to title caps in a string array
+                  //Anonymous function
+                  string="guvi geek"
+                  str=function(arr)
+                  {
+                    arr=arr.toLowerCase(arr);
+                    str1=arr.split(" ")
+                    for (var i = 0; i < str1.length; i++) {
+                     str1[i] = str1[i].charAt(0).toUpperCase() + str1[i].slice(1);
+                    }
+                   console.log(str1.join(' '));
+                  }
+                  str(string);
+                  //IIFE
+                  (function (arr){
+                    arr=arr.toLowerCase(arr);
+                    str1=arr.split(" ")
+                    for (var i = 0; i < str1.length; i++) {
+                     str1[i] = str1[i].charAt(0).toUpperCase() + str1[i].slice(1);
+                    }
+                     console.log(str1.join(' '));
+                  })("GUVI GEEK");
+                  //Arrow function
+                    S="GUVI GEEK"
+                    var cap = (arr) =>
+                    {
+                      arr=arr.toLowerCase(arr);
+                    str1=arr.split(" ")
+                    for (var i = 0; i < str1.length; i++) {
+                     str1[i] = str1[i].charAt(0).toUpperCase() + str1[i].slice(1);
+                    }
+                   console.log(str1.join(' '));
+                  }
+                  cap(S);
+//Anonymous Function :
+function isPalindrome(N)
+    {
+        let str = "" + N;
+        let len = str.length;
+        for (let i = 0; i < parseInt(len / 2, 10); i++)
+        {
+            if (str[i] != str[len - 1 - i ])
+                return false;
+        }
+        return true;
+    }
+          palin =function (arr, n)
+                 {
+        for (var i = 0; i < n; i++)
+        {
+            var ans = isPalindrome(arr[i]);
+            if (ans == false)
+                return false;
+        }
+        return true;
+    }
+    console.log(palin("madam",5));
+    
+   // IIFE : 
+
+      (  function (arr, n)
+        {
+            
+            for (var i = 0; i < n; i++)
+            {
+                var ans = isPalindrome(arr[i]);
+                if (ans == false)
+                    console.log(false);
+            }
+            console.log(true);
+        })([1,2,3] , 3)
+
+    //Arrow : 
+        Palindrome = (arr, n) =>
+        {
+        
+        for (var i = 0; i < n; i++)
+        {
+            var ans = isPalindrome(arr[i]);
+            if (ans == false)
+                return false;
+        }
+        return true;
+       }
+       console.log(Palindrome("madam",5));
+       //Remove duplica
+       // Anonymous Function : 
+       duplicate=function(array){
+                        var dup = [...new Set(array)];
+                        console.log(dup);
+                      }
+                      duplicate([1,1,2,3,4]);
+
+         // IIFE :         
+                   (function(array){
+                        var dup = [...new Set(array)];
+                        console.log(dup);
+                       })([1,1,2,3,4])
+    
+                       // rotate k times
+                       function reverse(array , li , ri){
+                       while(li < ri){
+                           var temp = a[li];
+                             a[li]= a[ri];
+                             a[ri] = temp; 
+                             li++;
+                             ri--;
+                           }
+                        }
+//Anonymous function :
+               rotate=function (a , k){
+                          k = k % a.length;
+                            if(k < 0){
+                              k += a.length;
+                            }
+                            reverse(a, 0, a.length - k - 1);
+                            reverse(a, a.length - k, a.length - 1);
+                            reverse(a, 0, a.length - 1);
+                          }
+
+                          
+             //IIFE :   
+             (function(a , k){
+                 k = k % a.length;
+                 if(k < 0){
+                 k += a.length
+                 }
+                reverse(a, 0, a.length-k - 1)
+                reverse(a, a.length - k, a.length - 1);
+                reverse(a, 0, a.length -1);
+})([1,2,3,4],2);
+//MEDIAN
+med=function(arr1,arr2){
+arr3=arr1.concat(arr2)
+  len=arr3.length
+  n=len/2
+  if(len%2!=0)
+  {
+      n1=(len+1)/2
+      return(arr3[n1-1])
+  }
+else
+    { 
+      m=arr3[n-1]
+      m2=arr3[n]
+      m3=(m+m2)/2
+    return(m3) 
+    }  
+  }
+  
+  //IIFE
+   (function (ar1, ar2){
+    arr3=arr1.concat(arr2)
+  len=arr3.length
+  n=len/2
+  if(len%2!=0)
+  {
+      n1=(len+1)/2
+      return(arr3[n1-1])
+  }
+  else{
+    m=arr3[n-1]
+      m2=arr3[n]
+      m3=(m+m2)/2
+    return(m3)
+  }
+  })
+  ([1,2,3,4,5],[6,7,8,9,10])
+    
+   
+                                  
+        </script>
+    </body>
+</html>
